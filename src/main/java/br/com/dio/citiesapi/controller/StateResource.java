@@ -1,6 +1,5 @@
 package br.com.dio.citiesapi.controller;
 
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +11,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.dio.citiesapi.entities.City;
 import br.com.dio.citiesapi.entities.State;
 import br.com.dio.citiesapi.repository.IStateRepository;
 
@@ -23,11 +21,6 @@ public class StateResource {
 	@Autowired
 	private IStateRepository iStateRepository;
 
-//	@GetMapping
-//	public List<State> states() {
-//		return iStateRepository.findAll();
-//	}
-	
 	@GetMapping
 	public Page<State> cities(Pageable pg) {
 		return iStateRepository.findAll(pg);

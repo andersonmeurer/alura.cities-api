@@ -1,20 +1,15 @@
 package br.com.dio.citiesapi.controller;
 
-import java.util.List;
 import java.util.Optional;
 
-import org.apache.catalina.connector.Response;
-import org.hibernate.annotations.Parameter;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.repository.query.Param;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.dio.citiesapi.entities.City;
 import br.com.dio.citiesapi.entities.Country;
 import br.com.dio.citiesapi.repository.ICountryRepository;
 
@@ -27,11 +22,6 @@ public class CountryResource {
 	public CountryResource(ICountryRepository iCountryRepository) {
 		this.iCountryRepository = iCountryRepository;
 	}
-
-//	@GetMapping
-//	public List<Country> countries() {
-//		return iCountryRepository.findAll();
-//	}
 
 	@GetMapping
 	public Page<Country> countries(Pageable pg) {

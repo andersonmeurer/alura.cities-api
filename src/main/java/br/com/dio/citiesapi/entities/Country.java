@@ -1,11 +1,8 @@
 package br.com.dio.citiesapi.entities;
 
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -25,9 +22,6 @@ public class Country {
 	private String code;
 
 	private Integer bacen;
-
-//	@OneToMany(mappedBy = "country")
-//	private List<State> states;
 
 	public Long getId() {
 		return id;
@@ -68,12 +62,4 @@ public class Country {
 	public void setBacen(Integer bacen) {
 		this.bacen = bacen;
 	}
-//	
-//	public void setState(List<State> states) {
-//		this.states = states;
-//	}
-//
-//	public List<State> getState() {
-//		return states;
-//	}
 }

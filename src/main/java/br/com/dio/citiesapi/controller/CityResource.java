@@ -1,6 +1,5 @@
 package br.com.dio.citiesapi.controller;
 
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,10 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.dio.citiesapi.entities.City;
-import br.com.dio.citiesapi.entities.Country;
-import br.com.dio.citiesapi.entities.State;
 import br.com.dio.citiesapi.repository.ICityRepository;
-import br.com.dio.citiesapi.repository.IStateRepository;
 
 @RestController
 @RequestMapping("/cities")
@@ -24,11 +20,6 @@ public class CityResource {
 
 	@Autowired
 	private ICityRepository iCityRepository;
-
-//	@GetMapping
-//	public List<City> cities() {
-//		return iCityRepository.findAll();
-//	}
 
 	@GetMapping
 	public Page<City> cities(Pageable pg) {

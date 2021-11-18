@@ -12,5 +12,9 @@ docker run --name cities-db -d -p 5432:5432 -e POSTGRES_USER=postgres_user_city 
 #Popular dados no banco escolhido encontrados em:
 https://github.com/chinnonsantos/sql-paises-estados-cidades/tree/master/PostgreSQL
 
+#Executar no banco de dados PostgreSQL
+CREATE EXTENSION cube;
+CREATE EXTENSION earthdistance;
+
 #Pesquisa paginada
 //http://localhost:8080/countries?page=0&size=10&sort=name,asc
